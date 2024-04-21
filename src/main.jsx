@@ -18,17 +18,17 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>
+      },
+      {
+        path: "/addCoffee",
+        element: <AddCoffee></AddCoffee>
+      },
+      {
+        path: "/updateCoffee",
+        element: <UpdateCoffee></UpdateCoffee>
       }
     ]
   },
-  {
-    path: "/addCoffee",
-    element: <AddCoffee></AddCoffee>
-  },
-  {
-    path: "/updateCoffee",
-    element: <UpdateCoffee></UpdateCoffee>
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
