@@ -1,11 +1,13 @@
-import React from 'react';
 import Navbar from '../shared/Navbar';
+import Footer from '../shared/Footer';
+import { Outlet } from 'react-router-dom';
 
 const Root = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h3 className='text-5xl font-rancho'>hello woeld</h3>
+            <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };

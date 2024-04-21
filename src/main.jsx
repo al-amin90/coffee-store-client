@@ -8,11 +8,18 @@ import {
 import Root from './mainlayout/Root.jsx';
 import AddCoffee from './components/AddCoffee';
 import UpdateCoffee from './components/UpdateCoffee';
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    children: [
+      {
+        index: true,
+        element: <Home></Home>
+      }
+    ]
   },
   {
     path: "/addCoffee",
