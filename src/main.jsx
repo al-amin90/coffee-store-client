@@ -7,8 +7,9 @@ import {
 } from "react-router-dom";
 import Root from './mainlayout/Root.jsx';
 import AddCoffee from './components/AddCoffee';
-import UpdateCoffee from './components/UpdateCoffee';
 import Home from './pages/Home';
+import UpdateCoffee from './pages/UpdateCoffee';
+import CoffeeDetails from './pages/CoffeeDetails';
 
 const router = createBrowserRouter([
   {
@@ -17,15 +18,22 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/coffee")
       },
       {
         path: "/addCoffee",
         element: <AddCoffee></AddCoffee>
       },
       {
-        path: "/updateCoffee",
-        element: <UpdateCoffee></UpdateCoffee>
+        path: "/updateCoffee/:id",
+        element: <UpdateCoffee></UpdateCoffee>,
+        loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+      },
+      {
+        path: "/coffeeDetails/:id",
+        element: <CoffeeDetails></CoffeeDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
       }
     ]
   },
