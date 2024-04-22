@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import CoffeeCard from "./CoffeeCard";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import background from "../assets/background.png"
 
 const PopularProducts = () => {
     const loadedCoffees = useLoaderData()
@@ -42,7 +43,7 @@ const PopularProducts = () => {
     }
 
     return (
-        <div>
+        <div style={{ backgroundImage: `url(${background})`, backgroundRepeat: "no-repeat", backgroundSize: "contain" }}>
             <div className="my-24 md:w-[80%] px-4 mx-auto">
                 <h4 className="text-center text-[#1B1A1A]">--- Sip & Savor ---</h4>
                 <h1 className="mb-5 text-4xl text-[#331A15] text-center font-semibold mt-2 font-rancho">Our Popular Products: {coffees.length}</h1>
