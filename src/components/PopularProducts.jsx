@@ -3,6 +3,7 @@ import CoffeeCard from "./CoffeeCard";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import background from "../assets/background.png"
+import { baseURL } from "../utilits/url";
 
 const PopularProducts = () => {
     const loadedCoffees = useLoaderData()
@@ -19,7 +20,7 @@ const PopularProducts = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/coffee/${id}`, {
+                fetch(`${baseURL}/coffee/${id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

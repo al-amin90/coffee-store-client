@@ -3,6 +3,7 @@ import coffee from "../assets/1.png"
 import batch from "../assets/2.png"
 import bean from "../assets/3.1.png"
 import jar from "../assets/4.png"
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -14,9 +15,13 @@ const Banner = () => {
                         <div>
                         </div>
                         <div>
-                            <h1 className="mb-5 text-4xl text-white font-rancho">Would you like a Cup of Delicious Coffee?</h1>
+                            <Link to="/users">
+                                <h1 className="mb-5 text-4xl text-white font-rancho">Would you like a Cup of Delicious Coffee?</h1>
+                            </Link>
                             <p className="mb-5 text-sm w-4/5 font-raleway">It's coffee time - Sip & Savor - Relaxation in every sip! Get the nostalgia back!! Your companion of every moment!!! Enjoy the beautiful moments and make them memorable.</p>
-                            <button className="py-2 px-5 hover:text-white hover:bg-transparent hover:border border-white bg-[#E3B577] text-xl text-[#242222] font-rancho">Learn More</button>
+                            <Link to="singUp">
+                                <button className="py-2 px-5 hover:text-white hover:bg-transparent hover:border border-white bg-[#E3B577] text-xl text-[#242222] font-rancho">Learn More</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

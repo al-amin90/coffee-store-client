@@ -2,6 +2,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import banner from "../assets/11.png"
 import Swal from 'sweetalert2'
+import { baseURL } from "../utilits/url";
 
 
 const AddCoffee = () => {
@@ -19,7 +20,7 @@ const AddCoffee = () => {
 
         const newCoffee = { name, chef, price, taste, category, details, photo }
 
-        fetch('http://localhost:5000/coffee', {
+        fetch(`${baseURL}/coffee`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -2,6 +2,7 @@ import banner from "../assets/11.png"
 import Swal from 'sweetalert2'
 import { FaArrowLeft } from "react-icons/fa6";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { baseURL } from "../utilits/url";
 
 
 const UpdateCoffee = () => {
@@ -23,7 +24,7 @@ const UpdateCoffee = () => {
         const newCoffee = { name, chef, price, taste, category, details, photo }
         console.log(newCoffee);
 
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`${baseURL}/coffee/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
